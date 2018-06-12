@@ -92,6 +92,7 @@
                 let res= await getMonthPlan({month:this.selectedmonth},this.adminInfo.cookie_value);
                 if (res.success){
                     this.monthPlanList=res.result;
+                    console.log(res.result)
 				}
                 this.$vux.loading.hide()
             },
@@ -338,19 +339,37 @@
 				
             },
             handleName(SubjectId,changePlan,AskStatus){
-                if (changePlan==0&&AskStatus==0) {
                     if (SubjectId == 2) {
-                        return '请假'
+                        if(AskStatus==0||AskStatus==2)
+                         return '请假'
+                        if(AskStatus==1)
+                         return '请假申请中'
+                        if(AskStatus==3)
+                         return '请假已驳回'
+                        if(AskStatus==4)
+                         return '已加班'
                     } else if (SubjectId == 3) {
-                        return '请假'
+                        if(AskStatus==0||AskStatus==2)
+                         return '请假'
+                        if(AskStatus==1)
+                         return '请假申请中'
+                        if(AskStatus==3)
+                         return '请假已驳回'
+                        if(AskStatus==4)
+                         return '已加班'
                     } else if (SubjectId == 0) {
-                        return '加班'
+                        if(AskStatus==0||AskStatus==2)
+                         return '加班'
+                        if(AskStatus==1)
+                         return '加班申请中'
+                        if(AskStatus==3)
+                         return '加班已驳回'
+                        if(AskStatus==4)
+                         return '已请假'
                     } else {
                         return ''
                     }
-                }else {
-                    return ''
-				}
+                
 //                }else if (changePlan==1){
 //                    return '取消请假'
 //                }else if (changePlan==2){

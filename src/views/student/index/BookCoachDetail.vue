@@ -32,7 +32,7 @@
 					<!--ChangePlan 0正常 1请假 2科目二加班 3科目三加班    PreBookStatus 1没预约 2被预约-->
 					<div style="width:8rem;">
 						<div v-if="item.PreBookStatus ==1&&item.SubjectId!=0&&item.SubjectId>adminInfo.subjext-1" style="text-align:center">
-							<x-button type="primary" :mini="true"  @click.native="submiteBook(item.Id)">立即预约</x-button>
+							<x-button type="primary" :mini="true"  @click.native="submiteBook(item.Id)" :disabled="item.AskStatus==1">{{PreBookNameFormatter(item.AskStatus)}}</x-button>
 					    </div>
 						<div v-else-if="item.PreBookStatus ==1&&item.SubjectId!=0&&item.SubjectId<adminInfo.subjext" style="text-align:center">
 						
@@ -131,6 +131,13 @@
                     return '晚上'
                 }else{
                     return ''
+                }
+			},
+			PreBookNameFormatter(askstatus){
+                if(askstatus==1){
+                    return '请假中'
+                }else{
+                    return '立即预约'
                 }
 			},
             ...mapActions(['updateTabIndex']),

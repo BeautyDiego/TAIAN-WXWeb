@@ -3,7 +3,7 @@
 		<flexbox style="z-index:5;position:relative;top:0;">
 			<flexbox-item>
 				<tab >
-					<tab-item @on-item-click="filterStatus(1)" selected>已发起</tab-item>
+					<tab-item @on-item-click="filterStatus(1)" selected>申请中</tab-item>
 					<tab-item @on-item-click="filterStatus(4)" >已通过</tab-item>
 					<tab-item @on-item-click="filterStatus(3)" >已驳回</tab-item>
 				</tab>

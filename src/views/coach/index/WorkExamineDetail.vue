@@ -1,6 +1,7 @@
 <template>
 	<div>
-		<group title="考勤申请审批信息">
+        <div ref="wrapper" :style="{ height: wrapperHeight + 'px' }" style="overflow: scroll;-webkit-overflow-scrolling : touch;position:relative;">
+		<group >
 			<cell title="日期"  :value="queryParams.change_date"></cell>
 			<cell title="时间" :value="daySpanFormat(queryParams.day_span)" ></cell>
 			<cell title="科目" :value="subjectFormat(queryParams.subject)" ></cell>
@@ -13,9 +14,11 @@
 			<cell title="审批时间" :value="datetimeFormat(queryParams.handle_time)" ></cell>
 			<cell title="审批状态" :value="askstatusFormat(queryParams.ask_status)" ></cell>
 		</group>
+        
 		<div v-if="queryParams.ask_status==1" style="padding:1rem 1rem">
 			<x-button type="primary"  @click.native="cancelAsk">取消申请</x-button>
 		</div>
+        </div>
 		<alert v-model="alertShow" title="提示" :content="alertContent"></alert>
 	</div>
 	
@@ -111,7 +114,7 @@
             this.$store.commit("readAdminInfo");
 		},
         mounted () {
-        
+         this.wrapperHeight = document.documentElement.clientHeight - this.$refs.wrapper.getBoundingClientRect().top+30;
         },
         activated(){
             this.updateTabIndex(0);//用于留住tabIndex

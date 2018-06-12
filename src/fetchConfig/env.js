@@ -7,7 +7,7 @@
  *
  */
 let baseUrl='http://192.168.2.109:8021';
-let frontWebUrl = 'http://192.168.2.149:8091';
+let frontWebUrl = 'http://192.168.183.128:8091';
 if(process.env.NODE_ENV === 'production'){
 
     frontWebUrl='http://wechatdt.xingteam.com';
