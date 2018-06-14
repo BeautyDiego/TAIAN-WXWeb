@@ -16,7 +16,8 @@
 			<group  v-infinite-scroll="loadMore"
 					infinite-scroll-disabled="loading"
 					infinite-scroll-distance="50" >
-				<cell-box style="flex-direction: column;" v-for="(item,index) in coachList" :key="index">
+				<cell-box style="flex-direction: column;" v-for="(item,index) in coachList" :key="index" :is-link="true"
+                :link="{path: 'coachevals', query: {item}}">
 					<div class="coach-detail-wrapper">
 						<div class="coach-detail-img">
 							<img :src="item.HeadImage?item.HeadImage:'./../../../static/img/nophoto.png'"  alt="" class="weui-media-box__thumb" :onerror="NOPHOTO">

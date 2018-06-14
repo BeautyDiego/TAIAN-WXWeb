@@ -4,10 +4,10 @@
 			<flexbox-item>
 				<tab  custom-bar-width="5rem">
 					<tab-item @on-item-click="filterStatus(0)" selected>全部</tab-item>
-					<tab-item @on-item-click="filterStatus(1)" >待履行</tab-item>
-					<tab-item @on-item-click="filterStatus(4)" >未履行</tab-item>
+					<tab-item @on-item-click="filterStatus(1)" >待培训</tab-item>
+					<tab-item @on-item-click="filterStatus(4)" >未培训</tab-item>
 					<tab-item @on-item-click="filterStatus(3)">待支付</tab-item>
-					<tab-item @on-item-click="filterStatus(5)">待评价</tab-item>
+					<tab-item @on-item-click="filterStatus(5)">已支付</tab-item>
 				</tab>
 			</flexbox-item>
 			<div class="date-search-btn" @click="dateSearchPaneToggle">
@@ -202,8 +202,8 @@
 
             },
             loadMore() {
-                this.loadCoachList();
                 this.searchCoachForm.page++;
+                this.loadCoachList();
             },
             filterStatus(value){
                 this.showDateSearchPane=false; //关闭搜索框

@@ -125,8 +125,8 @@
 
             },
             loadMore() {
-                this.loadReservationList();
                 this.searchCoachForm.page++;
+                this.loadReservationList();
             },
             setFocus () {
                 this.showMask=true;

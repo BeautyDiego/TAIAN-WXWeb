@@ -18,6 +18,7 @@ import StuList from './StuList'
 import CoachList from './CoachList'
 import TrainSiteList from './TrainSiteList'
 import CarList from './CarList'
+import CoachEvals from './CoachEvals'
 
 
 Vue.use(require('vue-wechat-title'))
@@ -66,7 +67,10 @@ const routes = [
             },component: TrainSiteList },
             { path: '/carlist', name:'carlist',meta: {
                 title: '车辆列表'
-            },component: CarList }]
+            },component: CarList },,
+            { path: '/coachevals', name:'coachevals',meta: {
+                title: '教练员评价'
+            },component: CoachEvals }]
     },
 
 ]

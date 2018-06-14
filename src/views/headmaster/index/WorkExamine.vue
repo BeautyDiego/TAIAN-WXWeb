@@ -47,7 +47,7 @@
 							<flexbox>
 								<span v-if="item.ask_status==1" class="demo-icon-22" style="font-size: 42px" >&#xe657;</span>
 								<span v-else-if="item.ask_status==4" class="demo-icon-22" style="font-size: 32px" >&#xe601;</span>
-								<span v-else="item.ask_status==3" class="demo-icon-22" style="font-size: 42px" >&#xe729;</span>
+								<span v-else-if="item.ask_status==3" class="demo-icon-22" style="font-size: 42px" >&#xe729;</span>
 							</flexbox>
 						</flexbox-item>
 					</flexbox>

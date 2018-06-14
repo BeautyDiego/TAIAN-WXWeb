@@ -45,3 +45,8 @@ export const handleAskOff = (data,token) => fetch('/api/head/handle_askoff', dat
  * 审批加班申请
  * **/
 export const handleAddWork = (data,token) => fetch('/api/head/handle_addwork', data, 'POST',token);
+
+/**
+ * 教练评价
+ * **/
+export const getCoachEvals = (data,token) => fetch('/api/head/coach_evals', data, 'POST',token);

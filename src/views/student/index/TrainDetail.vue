@@ -1,6 +1,6 @@
 <template>
 	<div ref="wrapper" :style="{ height: wrapperHeight + 'px' }" style="overflow: scroll;-webkit-overflow-scrolling : touch;">
-			<div class="trainsubject-title"><span  class="demo-icon" style="margin-right:0.5rem;font-size:2.4rem;" v-html="subjectIconFormatter(subjectText)"></span>&nbsp<span>科目{{subjectText}}</span></div>
+			<div class="trainsubject-title"><span  class="demo-icon" style="margin-right:0.5rem;font-size:2.4rem;" v-html="subjectIconFormatter(subjectText)"></span> <span>科目{{subjectText}}</span></div>
 			<div v-for="(item,index) in trainDetailList" :key="index" style="margin:1rem 1.2rem;border-top: 1px solid #F1F1F1;  border-bottom: 1px solid #F1F1F1;background-color: #fff">
 				<flexbox orient="vertical" >
 					<flexbox>
