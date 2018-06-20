@@ -115,7 +115,7 @@
             this.$store.commit("readAdminInfo");
 		},
         mounted () {
-         this.wrapperHeight = document.documentElement.clientHeight - this.$refs.wrapper.getBoundingClientRect().top+30;
+         this.wrapperHeight = document.documentElement.clientHeight - this.$refs.wrapper.getBoundingClientRect().top+50;
         },
         activated(){
             this.updateTabIndex(0);//用于留住tabIndex

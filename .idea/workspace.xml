@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce993d30-9355-4da1-ad06-e4a5f621622a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fetchConfig/env.js" afterPath="$PROJECT_DIR$/src/fetchConfig/env.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/coach/index/MonthPlan.vue" afterPath="$PROJECT_DIR$/src/views/coach/index/MonthPlan.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/coach/index/MyAttendence.vue" afterPath="$PROJECT_DIR$/src/views/coach/index/MyAttendence.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/coach/index/ReservationDetails.vue" afterPath="$PROJECT_DIR$/src/views/coach/index/ReservationDetails.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/coach/index/WorkExamineDetail.vue" afterPath="$PROJECT_DIR$/src/views/coach/index/WorkExamineDetail.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/coach/index/index.html" afterPath="$PROJECT_DIR$/src/views/coach/index/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/headmaster/index/CoachEvals.vue" afterPath="$PROJECT_DIR$/src/views/headmaster/index/CoachEvals.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/headmaster/index/WorkExamineDetail.vue" afterPath="$PROJECT_DIR$/src/views/headmaster/index/WorkExamineDetail.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/headmaster/index/index.html" afterPath="$PROJECT_DIR$/src/views/headmaster/index/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/student/index/BookTrain.vue" afterPath="$PROJECT_DIR$/src/views/student/index/BookTrain.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/student/index/Complain.vue" afterPath="$PROJECT_DIR$/src/views/student/index/Complain.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/student/index/MyBookDetail.vue" afterPath="$PROJECT_DIR$/src/views/student/index/MyBookDetail.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/student/index/index.html" afterPath="$PROJECT_DIR$/src/views/student/index/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,7 +31,7 @@
       <file leaf-file-name="BookCoachDetail.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/student/index/BookCoachDetail.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2638">
+            <state relative-caret-position="1626">
               <caret line="135" column="32" lean-forward="false" selection-start-line="135" selection-start-column="12" selection-end-line="135" selection-end-column="32" />
               <folding />
             </state>
@@ -51,8 +41,8 @@
       <file leaf-file-name="WorkExamineDetail.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/coach/index/WorkExamineDetail.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+            <state relative-caret-position="361">
+              <caret line="87" column="32" lean-forward="false" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
               <folding>
                 <element signature="e#1328#1400#0" expanded="true" />
               </folding>
@@ -60,11 +50,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="env.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CoachEvals.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/headmaster/index/CoachEvals.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="111" column="32" lean-forward="false" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Complain.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/student/index/Complain.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="5" column="67" lean-forward="false" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getData.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/headmaster/getData/getData.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="51" column="29" lean-forward="false" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="env.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fetchConfig/env.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+              <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -81,10 +101,12 @@
       <find>type=</find>
       <find>number</find>
       <find>date-search-btn</find>
-      <find>wrapperHeight</find>
-      <find>PreBookNameFormatter</find>
       <find>handleName</find>
       <find>planHandle</find>
+      <find>wrapperHeight</find>
+      <find>PreBookNameFormatter</find>
+      <find>coachE</find>
+      <find>AskStatus</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -94,8 +116,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/fetchConfig/env.js" />
-        <option value="$PROJECT_DIR$/src/views/headmaster/index/CoachEvals.vue" />
-        <option value="$PROJECT_DIR$/src/views/student/index/Complain.vue" />
         <option value="$PROJECT_DIR$/src/views/headmaster/index/WorkExamineDetail.vue" />
         <option value="$PROJECT_DIR$/src/views/coach/index/index.html" />
         <option value="$PROJECT_DIR$/src/views/headmaster/index/index.html" />
@@ -106,6 +126,8 @@
         <option value="$PROJECT_DIR$/src/views/coach/index/ReservationDetails.vue" />
         <option value="$PROJECT_DIR$/src/views/coach/index/MonthPlan.vue" />
         <option value="$PROJECT_DIR$/src/views/coach/index/WorkExamineDetail.vue" />
+        <option value="$PROJECT_DIR$/src/views/student/index/Complain.vue" />
+        <option value="$PROJECT_DIR$/src/views/headmaster/index/CoachEvals.vue" />
       </list>
     </option>
   </component>
@@ -120,7 +142,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1400" />
@@ -187,6 +209,29 @@
               <item name="TAIAN-WXWeb" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="headmaster" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TAIAN-WXWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TAIAN-WXWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="headmaster" type="462c0819:PsiDirectoryNode" />
+              <item name="getData" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TAIAN-WXWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TAIAN-WXWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="headmaster" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TAIAN-WXWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TAIAN-WXWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="student" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -240,16 +285,15 @@
       <updated>1529044861106</updated>
       <workItem from="1529044869405" duration="7511000" />
       <workItem from="1529386811208" duration="9060000" />
-      <workItem from="1529458063436" duration="3336000" />
+      <workItem from="1529458063436" duration="12940000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19907000" />
+    <option name="totallyTimeSpent" value="29511000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17913593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -258,7 +302,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -346,7 +390,7 @@
         <state relative-caret-position="782">
           <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
           <folding>
-            <element signature="e#1655#1767#0" expanded="false" />
+            <element signature="e#1770#1882#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -355,6 +399,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -372,6 +417,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1242">
           <caret line="56" column="69" lean-forward="false" selection-start-line="56" selection-start-column="69" selection-end-line="56" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -389,23 +435,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/student/index/Complain.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1265">
-          <caret line="56" column="69" lean-forward="false" selection-start-line="56" selection-start-column="69" selection-end-line="56" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/headmaster/index/CoachEvals.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
-          <folding>
-            <element signature="e#1655#1767#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -413,6 +443,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3452">
           <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="134" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -479,14 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/student/index/BookCoachDetail.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2638">
-          <caret line="135" column="32" lean-forward="false" selection-start-line="135" selection-start-column="12" selection-end-line="135" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/coach/index/MonthPlan.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
@@ -495,20 +518,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/fetchConfig/env.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/student/index/BookCoachDetail.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1626">
+          <caret line="135" column="32" lean-forward="false" selection-start-line="135" selection-start-column="12" selection-end-line="135" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/headmaster/getData/getData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="51" column="29" lean-forward="false" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/coach/index/WorkExamineDetail.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        <state relative-caret-position="361">
+          <caret line="87" column="32" lean-forward="false" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
           <folding>
             <element signature="e#1328#1400#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fetchConfig/env.js">
+    <entry file="file://$PROJECT_DIR$/src/views/student/index/Complain.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="67" lean-forward="false" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/headmaster/index/CoachEvals.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <caret line="111" column="32" lean-forward="false" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
           <folding />
         </state>
       </provider>

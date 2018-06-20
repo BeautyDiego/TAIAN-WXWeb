@@ -1,9 +1,9 @@
 <template>
 	<div>
 		<group label-width="4.5em" label-margin-right="2em" label-align="right">
-			<popup-picker title="投诉类别" :data="list" v-model="complainForm.ctype" value-text-align="left"></popup-picker>
-			<x-input title="投诉对象" placeholder="必填" v-model="complainForm.target"></x-input>
-			<x-textarea title="投诉详情" placeholder="请填写详细信息" :max="50" :show-counter="false" :rows="3" v-model="complainForm.content"></x-textarea>
+			<popup-picker title="投诉类别" :data="list" v-model="complainForm.ctype" value-text-align="left" @on-hide="onPickerHide"></popup-picker>
+			<x-input title="投诉对象" placeholder="请填写教练员手机号" v-model="complainForm.target" :disabled="complainForm.ctype[0]=='驾校'"></x-input>
+			<x-textarea title="投诉详情" placeholder="请填写详细信息" :max="20" :show-counter="false" :rows="3" v-model="complainForm.content"></x-textarea>
 			<x-button type="primary" @click.native="submitComplain" style="margin-top:4rem;">提交</x-button>
 		</group>
 		<alert v-model="alertShow" title="提示" :content="alertContent" :mask-z-index="2000" @on-hide="HideAlert" ></alert>
@@ -43,7 +43,7 @@
                        this.IsComplainSuccess=true;
                        this.alertShow=true;
                    }else{
-                       this.alertContent=result.result;
+                       this.alertContent=res.result;
                        this.alertShow=true;
                    }
 			   }else{
@@ -52,6 +52,14 @@
 			   }
       
 		   },
+            onPickerHide(){
+               if (this.complainForm.ctype[0]=='教练员'){
+                   this.complainForm.target='';
+			   }else{
+                   this.complainForm.target=this.adminInfo.dename;
+			   }
+      
+			},
             HideAlert(){
                
                this.IsComplainSuccess&&this.$router.replace('personal')
@@ -68,6 +76,9 @@
         },
         activated(){
             this.updateTabIndex(2);//用于留住tabIndex
+            this.complainForm.ctype= ['驾校'];
+			this.complainForm.target=this.adminInfo.dename;
+			this.complainForm.content = ''
         },
         beforeDestroy () {
         },

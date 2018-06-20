@@ -11,16 +11,16 @@
 						  v-for="(item,index) in examineList" :key="index"  :is-link="false">
 					<flexbox orient="horizontal" >
 						<flexbox-item :span="1/2">
-							<span class="eval-title">评价学员</span>{{item.Name}}
+							<span class="eval-title">评价学员</span><span class="eval-value">{{item.Name}}</span>
 						</flexbox-item>
 						<flexbox-item >
-							<span class="eval-title">培训科目</span>{{item.SubjectName}}
+							<span class="eval-title">培训科目</span><span class="eval-value">{{item.SubjectName}}</span>
 						</flexbox-item>
                        
 					</flexbox>
 					<flexbox orient="horizontal" >
 						<flexbox-item :span="1/2">
-							<span class="eval-title">评价时间</span>{{item.EvalDate}}
+							<span class="eval-title">评价时间</span><span class="eval-value">{{item.EvalDate}}</span>
 						</flexbox-item>
 						<flexbox-item >
 							<rater :value="item.ArgScore?parseFloat(item.ArgScore):0" :font-size=18 disabled></rater>
@@ -32,7 +32,7 @@
 							<span class="eval-title">评价内容</span>
 						</div>
 						<div style="flex:1">
-							<span>{{item.Details}}</span>
+							<span class="eval-value">{{item.Details}}</span>
 						</div>
 						
 					</flexbox>
@@ -108,8 +108,8 @@
             this.wrapperHeight = document.documentElement.clientHeight - this.$refs.wrapper.getBoundingClientRect().top-50;
         },
         activated(){
-            this.updateTabIndex(1);//用于留住tabIndex
-            this.examineList=[]; 
+            this.updateTabIndex(0);//用于留住tabIndex
+            this.examineList=[];
             this.searchExamineForm.coach_id=this.$route.query.item.Coach_Id;
             this.coachdata=this.$route.query.item;
             this.searchExamineForm.page=1;
@@ -134,7 +134,7 @@
                     rows:5
                 },
                 showloading:true,
-                examineList:[],
+                examineList:[{Name:'sad',SubjectName:'kemuer',EvalDate:'2017-02-02',ArgScore:3,Details:'我们就是以恶敖德萨多'}],
                 loadingtxt:'',
                 wrapperHeight: 0,
                 scrollDisabled:false,
@@ -150,5 +150,8 @@
 	font-size: 0.8rem;
 	color:#999;
 	padding-right: 1rem;
+}
+.eval-value{
+	font-size:1.2rem;
 }
 </style>
