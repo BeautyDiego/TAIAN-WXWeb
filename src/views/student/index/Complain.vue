@@ -3,10 +3,10 @@
 		<group label-width="4.5em" label-margin-right="2em" label-align="right">
 			<popup-picker title="投诉类别" :data="list" v-model="complainForm.ctype" value-text-align="left"></popup-picker>
 			<x-input title="投诉对象" placeholder="必填" v-model="complainForm.target"></x-input>
-			<x-textarea title="投诉详情" placeholder="请填写详细信息" :show-counter="false" :rows="3" v-model="complainForm.content"></x-textarea>
-			<x-button type="primary" @click.native="submitComplain">提交</x-button>
+			<x-textarea title="投诉详情" placeholder="请填写详细信息" :max="50" :show-counter="false" :rows="3" v-model="complainForm.content"></x-textarea>
+			<x-button type="primary" @click.native="submitComplain" style="margin-top:4rem;">提交</x-button>
 		</group>
-		<alert v-model="alertShow" title="提示" :content="alertContent" :mask-z-index="2000" ></alert>
+		<alert v-model="alertShow" title="提示" :content="alertContent" :mask-z-index="2000" @on-hide="HideAlert" ></alert>
 	</div>
 </template>
 
@@ -34,17 +34,28 @@
 			   }else{
                    params.c_type=1;
 			   }
-               params.target=this.complainForm.target;
-               params.content=this.complainForm.content;
-               let res=await complaint(params,this.adminInfo.cookie_value);
-               if (res.success){
-                   this.alertContent='投诉成功';
+			   if (this.complainForm.target&&this.complainForm.content){
+                   params.target=this.complainForm.target;
+                   params.content=this.complainForm.content;
+                   let res=await complaint(params,this.adminInfo.cookie_value);
+                   if (res.success){
+                       this.alertContent='投诉成功';
+                       this.IsComplainSuccess=true;
+                       this.alertShow=true;
+                   }else{
+                       this.alertContent=result.result;
+                       this.alertShow=true;
+                   }
+			   }else{
+                   this.alertContent='请填写投诉对象和投诉内容';
                    this.alertShow=true;
-               }else{
-                   this.alertContent=result.result;
-                   this.alertShow=true;
-               }
+			   }
+      
 		   },
+            HideAlert(){
+               
+               this.IsComplainSuccess&&this.$router.replace('personal')
+			},
             ...mapActions([
                 'updateTabIndex'
             ]),
@@ -78,6 +89,7 @@
 				},
                 alertShow:false,
                 alertContent:'',
+				IsComplainSuccess:false,
             }
         }
     }

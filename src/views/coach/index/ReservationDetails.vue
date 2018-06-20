@@ -2,7 +2,7 @@
 	<div>
 		<flexbox style="z-index:5;position:relative;top:0;">
 			<flexbox-item>
-				<tab >
+				<tab custom-bar-width="4rem" :scroll-threshold=5 >
 					<tab-item @on-item-click="filterStatus(0)" selected>全部</tab-item>
 					<tab-item @on-item-click="filterStatus(1)" >待培训</tab-item>
 					<tab-item @on-item-click="filterStatus(5)" >已付款</tab-item>

@@ -42,7 +42,7 @@
 						@on-click-right="onAddWorkConfirm"></popup-header>
 				<group :gutter=0>
 					<x-input  title="加班原因" v-model="handleAttendenceForm.reason" placeholder="请输入加班原因"  ></x-input>
-					<x-input v-if="radioSubjectValue" title="￥" v-model="handleAttendenceForm.price" placeholder="请输入金额" type="number" @on-change="moneyChange" ></x-input>
+					<x-input v-if="radioSubjectValue" title="￥" v-model="addWorkPrice" placeholder="请输入金额" ></x-input>
 					<radio :options="subjectOptions" v-model="radioSubjectValue" ></radio>
 				</group>
 			</popup>
@@ -178,6 +178,7 @@
                 }
                 this.radioSubjectValue='';
                 this.handleAttendenceForm.price='';
+                this.addWorkPrice='';
                 this.$vux.loading.hide()
             },
             changeMonth(value){
@@ -189,7 +190,7 @@
                 this.handleAttendenceForm.dayspan=PlanDaySpan;
                 this.handleAttendenceForm.subject=SubjectId;
                 this.changePlanStatus=changePlan;
-                if (AskStatus==0){
+                if (AskStatus==0||AskStatus==3){ //未申请过的和驳回的可以再次申请
                     if (changePlan==0){
                         if (SubjectId==0){ //加班
                             this.showAddWorkPopup=true;
@@ -259,13 +260,11 @@
                     this.doCancelAddWork();
                 }
 			},
-            moneyChange(value){
-                this.handleAttendenceForm.price=parseInt(value);
-			},
             onAddWorkConfirm(){
                 if (this.radioSubjectValue){
-                    if (parseInt(this.handleAttendenceForm.price)<1000&&parseInt(this.handleAttendenceForm.price)>0){
+                    if (parseInt(this.addWorkPrice)<1000&&parseInt(this.addWorkPrice)>0){
                         this.showAddWorkPopup = false;
+                        this.handleAttendenceForm.price=this.addWorkPrice;
                         this.handleAttendenceForm.subject=this.radioSubjectValue;
                         this.doAddWork();
 					}else{
@@ -445,6 +444,7 @@
                 showCancelHandlePopup:false,
 				cancelHandlePlaceHolder:'',
                 cancelHandleTitle:'',
+                addWorkPrice:'', //加班申请的价格
 				
                 
             }

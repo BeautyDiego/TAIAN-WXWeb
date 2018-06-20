@@ -102,7 +102,6 @@
                 this.loading = true;
                 let params=this.searchCoachForm;
                 let res=await bookCoachList(params,this.adminInfo.cookie_value)
-                console.log(res);
                 if (res.success){
                     if (res.result.length>0){
                         for (let i=0; i < res.result.length; i++) {
@@ -125,8 +124,8 @@
 
             },
             loadMore() {
-                this.searchCoachForm.page++;
                 this.loadReservationList();
+                this.searchCoachForm.page++;
             },
             setFocus () {
                 this.showMask=true;

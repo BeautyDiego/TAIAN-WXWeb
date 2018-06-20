@@ -1,7 +1,7 @@
 <template>
 	<div>
         <div ref="wrapper" :style="{ height: wrapperHeight + 'px' }" style="overflow: scroll;-webkit-overflow-scrolling : touch;position:relative;">
-		<group >
+		<group title="考核申请审批信息">
 			<cell title="日期"  :value="queryParams.change_date"></cell>
 			<cell title="时间" :value="daySpanFormat(queryParams.day_span)" ></cell>
 			<cell title="科目" :value="subjectFormat(queryParams.subject)" ></cell>
@@ -10,9 +10,9 @@
 			<cell title="申请时间" :value="datetimeFormat(queryParams.ask_time)" ></cell>
 			<cell title="申请原因" :value="queryParams.ask_remark" ></cell>
 			<cell title="审批人" :value="queryParams.handle_name" ></cell>
-			<cell :value-align="alignValue" title="审批备注" :value="queryParams.handle_remark" ></cell>
 			<cell title="审批时间" :value="datetimeFormat(queryParams.handle_time)" ></cell>
 			<cell title="审批状态" :value="askstatusFormat(queryParams.ask_status)" ></cell>
+			<x-textarea v-if="queryParams.ask_status!=1" title="审批备注:"  :value="queryParams.handle_remark" readonly ></x-textarea>
 		</group>
         
 		<div v-if="queryParams.ask_status==1" style="padding:1rem 1rem">
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-    import { Group,Cell,XButton,CellBox, XInput,Alert} from 'vux'
+    import { Group,Cell,XButton,CellBox, XInput,Alert,XTextarea } from 'vux'
     import { mapState, mapActions } from 'vuex'
 	import {cancelExamineAsk} from './../getData/getData'
     export default {
@@ -35,6 +35,7 @@
             XButton,
             XInput,
 			Alert,
+            XTextarea
         },
         methods: {
             daySpanFormat(value){
@@ -133,11 +134,11 @@
         },
         data () {
             return {
+                wrapperHeight:0,
                 showloading:true,
                 alertShow:false,
                 alertContent:'',
                 queryParams:{},
-                alignValue:'left'
             }
         }
     }

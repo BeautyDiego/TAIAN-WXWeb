@@ -114,7 +114,7 @@
 						@on-click-left="showPopup = false"
 						@on-click-right="comfirmRadio"></popup-header>
 				<group :gutter=0>
-					<x-input v-if="radioValue!=0" title="￥" v-model="inputValue" placeholder="请输入培训金额" type="number"  :disabled="radioValue==0"></x-input>
+					<x-input v-if="radioValue!=0" title="￥" v-model="inputValue" placeholder="请输入培训金额" :disabled="radioValue==0"></x-input>
 					<radio :options="subjectOptions" v-model="radioValue"></radio>
 				</group>
 			</popup>
@@ -290,7 +290,7 @@
 			comfirmRadio(){  //确认radio的选择
 				if (this.radioValue){
 					if (this.inputValue>0){
-					    if(this.inputValue<1000&&parseInt(this.inputValue)>0){
+					    if(parseInt(this.inputValue)<1000&&parseInt(this.inputValue)>0){
                             this.showPopup = false;
                             this.myModule[this.currentWeekname][this.selectIndex]=this.radioValue;
                             this.myModule[this.currentWeekname][this.selectIndex+3]=parseInt(this.inputValue);

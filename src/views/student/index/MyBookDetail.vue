@@ -2,7 +2,7 @@
 	<div style="height:100%">
 		<flexbox style="z-index:5;position:relative;top:0;">
 			<flexbox-item>
-				<tab  custom-bar-width="5rem">
+				<tab custom-bar-width="4rem" scroll-threshold="5">
 					<tab-item @on-item-click="filterStatus(0)" selected>全部</tab-item>
 					<tab-item @on-item-click="filterStatus(1)" >待培训</tab-item>
 					<tab-item @on-item-click="filterStatus(4)" >未培训</tab-item>
@@ -460,7 +460,7 @@
 	}
 	
 	.date-search-btn{
-		width:4rem;text-align:center;height:44px;line-height:44px;    background-color:#fff;
+		width:3rem;text-align:center;height:44px;line-height:44px;    background-color:#fff;
 		>div{
 			background: linear-gradient(180deg, #e5e5e5, #e5e5e5, rgba(229, 229, 229, 0)) bottom left no-repeat;  background-size: 100% 1px;    box-sizing: border-box;height:44px;
 		}

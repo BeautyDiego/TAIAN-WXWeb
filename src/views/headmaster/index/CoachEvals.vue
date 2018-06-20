@@ -1,54 +1,44 @@
 <template>
 	<div>
+		<divider style="margin-top:2rem;"><span style="font-size: 1.5rem">{{coachdata.Name}}</span><rater :value="coachdata.ArgScore?parseFloat(coachdata.ArgScore):0" :font-size=18 disabled></rater></divider>
 		<div ref="wrapper" :style="{ height: wrapperHeight + 'px' }" style="overflow: scroll;-webkit-overflow-scrolling:touch;color:#4a4a4a;">
-			<group  v-infinite-scroll="loadMore"
+			<group  title="教练员订单评价"
+					v-infinite-scroll="loadMore"
 					infinite-scroll-disabled="scrollDisabled"
 					infinite-scroll-distance="10">
-<flexbox orient="horizontal">
-    	<flexbox-item :span="2/3">
-				{{this.coachdata.Name}}
-		</flexbox-item>
-            <flexbox-item >
-				 <rater :value="this.coachdata.ArgScore?parseFloat(this.coachdata.ArgScore):0" :font-size=18 disabled></rater>
-		</flexbox-item>
-</flexbox>
+			
 				<cell-box style="flex-direction: column;margin-bottom:0.5rem;"
 						  v-for="(item,index) in examineList" :key="index"  :is-link="false">
 					<flexbox orient="horizontal" >
-						<flexbox-item :span="2/3">
-							<flexbox orient="vertical">
-								<flexbox-item >
-									<flexbox>
-										<flexbox-item >
-											{{item.Name}}
-										</flexbox-item>
-			
-									</flexbox>
-								</flexbox-item>
-                                    <flexbox>
-                                        
-                                        <flexbox-item >
-                                                    {{item.SubjectName}}
-                                        </flexbox-item>
-                                         <flexbox-item >
-                              <span >￥{{item.TradeCash}}</span>
-                        </flexbox-item>
-                                    </flexbox>
-								<flexbox-item >
-									<flexbox>
-										<flexbox-item >
-											{{item.EvalDate}}
-										</flexbox-item>
-                                       
-									</flexbox>
-								</flexbox-item>
-							</flexbox>
+						<flexbox-item :span="1/2">
+							<span class="eval-title">评价学员</span>{{item.Name}}
 						</flexbox-item>
-                                        <flexbox-item >
-                                            <rater :value="item.ArgScore?parseFloat(item.ArgScore):0" :font-size=18 disabled></rater>
-                                        </flexbox-item>
+						<flexbox-item >
+							<span class="eval-title">培训科目</span>{{item.SubjectName}}
+						</flexbox-item>
                        
 					</flexbox>
+					<flexbox orient="horizontal" >
+						<flexbox-item :span="1/2">
+							<span class="eval-title">评价时间</span>{{item.EvalDate}}
+						</flexbox-item>
+						<flexbox-item >
+							<rater :value="item.ArgScore?parseFloat(item.ArgScore):0" :font-size=18 disabled></rater>
+						</flexbox-item>
+					
+					</flexbox>
+					<flexbox orient="horizontal" >
+						<div style="width:5rem;">
+							<span class="eval-title">评价内容</span>
+						</div>
+						<div style="flex:1">
+							<span>{{item.Details}}</span>
+						</div>
+						
+					</flexbox>
+					
+					
+					
 				
 				</cell-box>
 			</group>
@@ -59,7 +49,7 @@
 </template>
 
 <script>
-    import { Tab, TabItem,Group, CellBox,Flexbox, FlexboxItem,Popup,XInput,Calendar,LoadMore,Popover,Rater,PopupPicker } from 'vux'
+    import { Tab, TabItem,Group, CellBox,Flexbox, FlexboxItem,XInput,LoadMore,Rater,Divider,XTextarea   } from 'vux'
     import { mapState, mapActions } from 'vuex'
     import {getCoachEvals,getDepartmentList} from './../getData/getData'
     export default {
@@ -69,18 +59,16 @@
             CellBox,
             Flexbox,
             FlexboxItem,
-            Popup,
             XInput,
-            Calendar,
             LoadMore,
-            Popover,
-            PopupPicker,
-            Rater
+            Divider,
+            Rater,
+            XTextarea
         },
         methods: {
             async loadExamineList(){
                 this.showloading=true;
-                this.loadingtxt='正在加载'
+                this.loadingtxt='正在加载';
                 let params=this.searchExamineForm;
                 let res=await getCoachEvals(params,this.adminInfo.cookie_value)
                 console.log(res);
@@ -101,25 +89,20 @@
                         this.scrollDisabled=true;
                     }
                 }
+                this.showloading=false;
+                this.loadingtxt='无更多数据';
+                this.scrollDisabled=true;
             },
             loadMore() {
                 this.loadExamineList();
                 this.searchExamineForm.page++;
             },
-
-            onChangePicker(val){
-              this.searchExamineForm.departmentid=  this.deptList.find((value, index, arr)=> {
-                    return value.DeName== val;
-			  }).Id;
-			  this.filterStatus(this.searchExamineForm.status);
-			},
             ...mapActions([
                 'updateTabIndex'
             ]),
         },
         created(){
             this.$store.commit("readAdminInfo");
-            this.getDeptList();
         },
         mounted () {
             this.wrapperHeight = document.documentElement.clientHeight - this.$refs.wrapper.getBoundingClientRect().top-50;
@@ -131,8 +114,7 @@
             this.coachdata=this.$route.query.item;
             this.searchExamineForm.page=1;
             this.searchExamineForm.rows=5;
-           console.log('activated');
-           this.loadMore();
+            this.loadMore();
         },
         beforeDestroy () {
         },
@@ -158,12 +140,15 @@
                 scrollDisabled:false,
 				deptList:[],
                 coachdata:[],
-                pickerValue:['全部'],
             }
         }
     }
 </script>
 
 <style lang="less" scoped>
-
+.eval-title{
+	font-size: 0.8rem;
+	color:#999;
+	padding-right: 1rem;
+}
 </style>

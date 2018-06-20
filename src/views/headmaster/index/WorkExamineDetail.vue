@@ -12,9 +12,9 @@
 				<cell title="申请时间" :value="datetimeFormat(queryParams.ask_time)" ></cell>
 				<cell title="申请原因" :value="queryParams.ask_remark" ></cell>
 				<cell title="审批人" :value="queryParams.handle_name" ></cell>
-				<cell :value-align="alignValue" v-if="queryParams.ask_status!=1" title="审批备注" :value="queryParams.handle_remark" ></cell>
 				<cell title="审批时间" :value="datetimeFormat(queryParams.handle_time)" ></cell>
 				<cell title="审批状态" :value="askstatusFormat(queryParams.ask_status)" ></cell>
+				<x-textarea v-if="queryParams.ask_status!=1" title="审批备注:"  :value="queryParams.handle_remark" readonly ></x-textarea>
 				<x-textarea v-if="queryParams.ask_status==1" title="审批备注:" v-model="handleForm.remark"></x-textarea>
 				<checker v-if="queryParams.ask_status==1" style="padding:5px 12px;"  type="radio" v-model="handleForm.handle" default-item-class="checker-item" selected-item-class="checker-item-selected">
 					<checker-item :value="1">同意</checker-item>
@@ -167,7 +167,6 @@
                     handle:1,
 					remark:''
 				},
-				alignValue:'left'
             }
         }
     }
