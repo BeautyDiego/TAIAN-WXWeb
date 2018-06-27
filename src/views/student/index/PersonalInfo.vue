@@ -120,7 +120,12 @@
             }),
 			formatedIdCard:function () {
 				let idCard=this.adminInfo.id_card;
-				return idCard.substring(0,5)+'*****'+idCard.substring(idCard.length-10)
+				if (idCard.length>10){
+                    return idCard.substring(0,5)+'*****'+idCard.substring(idCard.length-10)
+				}else{
+                    return idCard.substring(0,5)+'*****'
+                }
+				
             }
         },
         data () {
